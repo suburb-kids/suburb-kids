@@ -1,0 +1,101 @@
+doctype html
+html
+  head
+    title Suburb Kids
+    meta(charset='utf-8')
+    meta(name='description', content='Suburb Kids - Beats, Mix und Mastering aus Berlin')
+    meta(name='author', content='Suburb Kids')
+    meta(property='og:title', content='')
+    meta(property='og:type', content='website')
+    meta(property='og:url', content='')
+    meta(property='og:image', content='')
+    meta(property='og:description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no', )
+
+    link(href='//fonts.googleapis.com/css?family=Roboto:400,300,100,700,900', rel='stylesheet', type='text/css')
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet')
+    link(href='//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css', rel="stylesheet")
+    link(href='//cdnjs.cloudflare.com/ajax/libs/responsive-nav.js/1.0.39/responsive-nav.css', rel='stylesheet')
+    link(href='//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.css', rel='stylesheet')
+
+    link(href='//fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+
+    style @import url('public/stylesheets/main.css');
+
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.1/jquery.scrollTo.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/responsive-nav.js/1.0.39/responsive-nav.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js')
+    script(src='public/javascripts/main.js')
+
+    link(rel='shortcut icon', href='')
+
+  body
+    header
+      .mobile-nav-wrapper
+        nav.nav-collapse
+          ul.mobile-navigation
+            li
+              a.clearfix(href='#home')
+                | Home
+                i.glyphicon.glyphicon-triangle-right
+
+            li
+              a.clearfix(href='#services')
+                | Services
+                i.glyphicon.glyphicon-triangle-right
+            li
+              a.clearfix(href='#about')
+                | About
+                i.glyphicon.glyphicon-triangle-right
+            li
+              a.clearfix(href='#references')
+                | Referenzen
+                i.glyphicon.glyphicon-triangle-right
+            li
+              a.clearfix(href='#contact')
+                | Kontakt
+                i.glyphicon.glyphicon-triangle-right
+
+      .header-inner
+        div.left
+          a(href='/')
+            img(src='public/images/logo_inverted.jpg')
+          h1
+            | <span class="orange">Suburb</span> Kids
+
+        div.right
+          a#nav-toggle(href='#')
+            span
+          ul.navigation
+            li
+              a(href='#home') Home
+            li
+              a(href='#services') Services
+            li
+              a(href='#about') About
+            li
+              a(href='#references') Referenzen
+            li
+              a(href='#contact') Kontakt
+
+    main
+      include partials/home
+      include partials/services
+      include partials/about
+      include partials/references
+      include partials/contact
+
+
+      #push
+    footer
+      .black
+        .inner
+          a(href='/') © 2015 Suburb Kids
+          a(href='mailto:suburb-kids@gmail.com') suburb-kids@gmail.com
+          a(href='tel:03076551108') 030 / 76 55 11 08
+
+      .grey
+        a.imprint(href='#imprint') Impressum
+
