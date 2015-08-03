@@ -40,6 +40,9 @@ gulp.task('styles', function() {
 gulp.task('jade', function() {
   gulp.src('./views/index.jade')
     .pipe(jade())
+    .pipe(gulp.dest('./page/'));
+  gulp.src('./views/coming-soon.jade')
+    .pipe(jade())
     .pipe(gulp.dest('./'));
 });
 
