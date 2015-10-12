@@ -6,7 +6,13 @@ var gulp          = require('gulp'),
     browserify    = require('browserify'),
     source        = require('vinyl-source-stream'),
     spawn         = require('child_process').spawn,
-    jadeify       = require('jadeify');
+    jadeify       = require('jadeify'),
+    plumber       = require('gulp-plumber');
+
+function swallowError(err) {
+  console.log(err);
+  this.emit('end');
+};
 
 gulp.task('scripts', function() {
   var b = browserify({
@@ -26,6 +32,7 @@ gulp.task('scripts', function() {
 
 gulp.task('styles', function() {
   gulp.src('./assets/stylesheets/*.sass')
+    .pipe(plumber(swallowError))
     .pipe(sass({
       indentedSyntax: true,
       errLogToConsole: true
@@ -39,9 +46,7 @@ gulp.task('styles', function() {
 
 gulp.task('jade', function() {
   gulp.src('./views/index.jade')
-    .pipe(jade())
-    .pipe(gulp.dest('./page/'));
-  gulp.src('./views/coming-soon/index.jade')
+    .pipe(plumber(swallowError))
     .pipe(jade())
     .pipe(gulp.dest('./'));
 });

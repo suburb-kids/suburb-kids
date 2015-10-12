@@ -42,10 +42,22 @@ header
   img
     max-height: 60px
 
+    @media (min-width: 768px) and (max-width: 900px)
+      display: none
+    @media (max-width: 400px)
+      display: none
+
+
   .header-inner
     position: relative
     padding: 1em 2em
     height: 100%
+
+    > .left h1
+      vertical-align: middle
+
+      @media (max-width: 768px)
+        font-size: 2.1em
 
     @include middler
 
@@ -332,8 +344,10 @@ $height: 5px
 #nav-toggle
   cursor: pointer
   position: absolute
-  bottom: 23px
-  right: 2em
+  bottom: 68px
+  @media (max-width: 400px)
+    bottom: 54px
+  right: 4.1em
   display: none
 
   span
@@ -399,3 +413,15 @@ $height: 5px
       img
         max-height: 198px
         margin: 0 auto
+
+
+.line
+  font-size: 1.2em
+
+  &.strong
+    font-weight: bold
+
+#disclaimer
+  h3
+    margin-top: 46px
+
