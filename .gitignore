@@ -1,5 +1,2 @@
 node_modules
 .DS_STORE
-*.html
-public/javascripts/
-public/stylesheets/
