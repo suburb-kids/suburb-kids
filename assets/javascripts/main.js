@@ -10,6 +10,7 @@ var sectionJS = {
 };
 
 sectionJS['mail-sent'] = function() {
+  $(window).scrollTo(0, 284);
   window.setTimeout(function() {
     window.location.href = '/';
   }, 5000);
