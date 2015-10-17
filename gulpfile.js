@@ -6,7 +6,8 @@ var gulp          = require('gulp'),
     browserify    = require('browserify'),
     source        = require('vinyl-source-stream'),
     spawn         = require('child_process').spawn,
-    jadeify       = require('jadeify'),
+    uglify        = require('gulp-uglify'),
+    minifyCss     = require('gulp-minify-css'),
     plumber       = require('gulp-plumber');
 
 function swallowError(err) {
@@ -15,18 +16,8 @@ function swallowError(err) {
 };
 
 gulp.task('scripts', function() {
-  var b = browserify({
-    debug: true
-  });
-  b.add('./assets/javascripts/main.js')
-  b.transform(jadeify)
-
-  return b.bundle()
-    .on('error', function(err){
-      console.log(err.annotated ? err.annotated : err.message);
-      this.emit('end');
-    })
-    .pipe(source('main.js'))
+  return gulp.src('assets/javascripts/main.js')
+    .pipe(uglify())
     .pipe(gulp.dest('./public/javascripts/'));
 });
 
@@ -38,6 +29,7 @@ gulp.task('styles', function() {
       errLogToConsole: true
     }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+    .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('./public/stylesheets/'));
 
   gulp.src('./assets/stylesheets/*.css')
