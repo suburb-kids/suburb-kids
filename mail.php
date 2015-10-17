@@ -8,5 +8,7 @@
 
   mail($to, $subject, $message, $headers);
 
-  print('Mail gesendet.')
+  header("Location: http://suburb-kids.de/#mail-sent");
+
+  die();
 ?>
