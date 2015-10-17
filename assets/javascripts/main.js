@@ -9,6 +9,12 @@ var sectionJS = {
   }
 };
 
+sectionJS['mail-sent'] = function() {
+  window.setTimeout(function() {
+    window.location.href = '/';
+  }, 5000);
+};
+
 
 (function($) {
   function loadSection(locationHash, options) {
