@@ -8,12 +8,12 @@ section#contact
     .form
       form(action='mail.php', method='post')
         label(for='name') Dein Name:
-        input(type='text', placeholder='Max Mustermann', id='name', required='true')
+        input(type='text', placeholder='Max Mustermann', name='name', id='name', required='true')
 
         label(for='email') Deine Email:
-        input(type='email', placeholder='max@mustermail.de', id='name', required='true')
+        input(type='email', placeholder='max@mustermail.de', name='email', id='email', required='true')
 
         label(for='text') Dein Anliegen:
-        textarea(id='text', required='true', rows='6')
+        textarea(id='text', name='text', required='true', rows='6')
 
         input(type='submit', value='Abschicken')
