@@ -1,5 +1,5 @@
 <?php
-  $to      = 'suburb-kids@gmail.com';
+  $to      = 'test@tonekk.de';
   $subject = '[suburb-kids.de] Nachricht von ' . $_POST['name'];
   $message = $_POST['text'];
   $headers = 'From: ' . $_POST['email'] . "\r\n" .
